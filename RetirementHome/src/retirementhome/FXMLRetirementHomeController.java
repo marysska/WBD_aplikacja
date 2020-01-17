@@ -24,6 +24,8 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import retirementhome.DBConnection;
+import retirementhome.screen.FXMLBoarderMainScreenController;
+import retirementhome.screen.FXMLBossMainScreenController;
 import retirementhome.screen.FXMLWorkerMainScreenController;
 
 
@@ -57,12 +59,53 @@ public class FXMLRetirementHomeController implements Initializable {
         }
         catch(Exception e){
             Alert alert= new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error to databas22e connection");
+            alert.setTitle("Error to worker screen connection");
             alert.setContentText("Details: "+ e.getMessage());
             alert.show();
         }
         
     }
+
+        private void openBoarderWindow(ActionEvent action, Integer id){
+        try{
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/retirementhome/screen/FXMLBoarderMainScreen.fxml"));     
+            Parent root = (Parent)fxmlLoader.load();          
+            FXMLBoarderMainScreenController controller = fxmlLoader.<FXMLBoarderMainScreenController>getController();
+            controller.setBoarderId(id);
+            Scene scene = new Scene(root);      
+            //scene.getStylesheets().add( getClass().getResource("/retirementhome/screen/styles/MenuBarStyle.css").toExternalForm());
+            Stage screenWindow = (Stage)((Node)action.getSource()).getScene().getWindow();
+            screenWindow.setScene(scene);
+            screenWindow.show(); 
+        }
+        catch(Exception e){
+            Alert alert= new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error to boarder connection");
+            alert.setContentText("Details: "+ e.getMessage());
+            alert.show();
+        }
+        
+    }
+    private void openBossWindow(ActionEvent action, Integer id){
+        try{
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/retirementhome/screen/FXMLBossMainScreen.fxml"));     
+            Parent root = (Parent)fxmlLoader.load();          
+            FXMLBossMainScreenController controller = fxmlLoader.<FXMLBossMainScreenController>getController();
+            controller.setBossId(id);
+            Scene scene = new Scene(root);      
+            //scene.getStylesheets().add( getClass().getResource("/retirementhome/screen/styles/MenuBarStyle.css").toExternalForm());
+            Stage screenWindow = (Stage)((Node)action.getSource()).getScene().getWindow();
+            screenWindow.setScene(scene);
+            screenWindow.show(); 
+        }
+        catch(Exception e){
+            Alert alert= new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error to databas22e connection");
+            alert.setContentText("Details: "+ e.getMessage());
+            alert.show();
+        }
+        
+    }    
     
     /*
     private void openWindow(ActionEvent action, String [] FXMLPath, Integer id, String [] menuName)throws IOException{
@@ -139,11 +182,11 @@ public class FXMLRetirementHomeController implements Initializable {
             }
             case "PEN":{
                 TextLoginInvalidPassword.setVisible(false);
-                //openBoarderWindow(action, new String []{"/retirementhome/screen/FXMLBoarderBorderPaneScreen.fxml", "/retirementhome/screen/FXMLBoarderListScreen.fxml" , "/retirementhome/screen/FXMLAccomodationScreen.fxml", "/retirementhome/screen/FXMLWorkerDataScreen.fxml"}, personId, new String []{"Pensjonariusze", "Kwaterowanie", "Dane"} );
+                openBoarderWindow(action, personId);
             }
             case "SZE":{
                 TextLoginInvalidPassword.setVisible(false);
-                //openBossWindow(action, new String []{"/retirementhome/screen/FXMLBossBorderPaneScreen.fxml", "/retirementhome/screen/FXMLBoarderListScreen.fxml" , "/retirementhome/screen/FXMLAccomodationScreen.fxml", "/retirementhome/screen/FXMLWorkerDataScreen.fxml"}, personId, new String []{"Pensjonariusze", "Kwaterowanie", "Dane"} );
+                openBossWindow(action, personId);
             }
             default: {
                 TextLoginInvalidPassword.setVisible(true);
