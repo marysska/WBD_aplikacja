@@ -1,11 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="retirementhome.screen.FXMLBoarderMainScreenController">
-    
+<AnchorPane id="AnchorPane" maxHeight="600.0" maxWidth="1000.0" minHeight="600.0" minWidth="1000.0" prefHeight="600.0" prefWidth="1000.0" stylesheets="@styles/MenuBarStyle.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="retirementhome.screen.FXMLBoarderMainScreenController">
+   <children>
+      <TabPane prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <tabs>
+          <Tab text="Dane osobowe">
+               <content>
+                  <fx:include source="FXMLBoarderListScreen.fxml" />
+               </content></Tab>
+            <Tab text="Pobyt">
+               <content>
+                  <fx:include source="FXMLBoarderAccomodationScreen.fxml" />
+               </content>
+            </Tab>
+            <Tab text="Opłaty">
+               <content>
+                  <fx:include source="FXMLWorkerDataScreen.fxml" />
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <Button layoutX="919.0" layoutY="2.0" mnemonicParsing="false" onAction="#buttonWylogujSieSetOnAction" text="Wyloguj się" AnchorPane.rightAnchor="3.6666666666666714" AnchorPane.topAnchor="2.0" />
+   </children>
 </AnchorPane>
