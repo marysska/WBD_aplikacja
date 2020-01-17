@@ -455,7 +455,33 @@ public class Worker {
         }
         return res;     
     }
-    
+    public int udateWorker(Connection conn, int id,String doc,  String city, String street, String nrLoc, String nrHouse, String postCode , String acc){
+        if (postCode.charAt(2) != '-'){
+            return -1;
+        }
+        String sql = "update pracownicy set nr_dokumentu_pracownika = ? , miasto = ? , ulica= ? , m nr_domu = ? , nr_lokalu = ? , kod_pocztowy = ?, nr_konta = ?where nr_pensjonariusza = ? ";
+        PreparedStatement stmt;
+        Integer res = 0;
+        try{
+            stmt = conn.prepareStatement(sql);
+            stmt.setString(1, doc);
+            stmt.setString(2, city);
+            stmt.setString(3, street);
+            stmt.setString(4, nrLoc);
+            stmt.setString(5, nrHouse);
+            stmt.setString(6, postCode);
+            stmt.setString(7, sql);
+            stmt.setString(7, acc);
+            
+            res = stmt.executeUpdate();
+        }catch(SQLException exc){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error with updating data");
+            alert.setContentText("Details: "+exc.getMessage());
+            alert.showAndWait();            
+        }
+        return res;
+    }    
     
     
 }

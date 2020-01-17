@@ -80,7 +80,7 @@ public class FXMLRetirementHomeController implements Initializable {
         }
         catch(Exception e){
             Alert alert= new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error to boarder connection");
+            alert.setTitle("Error to boarder screen connection");
             alert.setContentText("Details: "+ e.getMessage());
             alert.show();
         }
@@ -100,7 +100,7 @@ public class FXMLRetirementHomeController implements Initializable {
         }
         catch(Exception e){
             Alert alert= new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error to databas22e connection");
+            alert.setTitle("Error to boss screen connection");
             alert.setContentText("Details: "+ e.getMessage());
             alert.show();
         }
@@ -177,16 +177,19 @@ public class FXMLRetirementHomeController implements Initializable {
                 //final String [] path =  new String []{"/retirementhome/screen/FXMLBorderPaneScreen.fxml", "/retirementhome/screen/FXMLBoarderListScreen.fxml" , "/retirementhome/screen/FXMLAccomodationScreen.fxml", "/retirementhome/screen/FXMLWorkerDataScreen.fxml", "/retirementhome/screen/FXMLRetirementHome.fxml"};
                 TextLoginInvalidPassword.setVisible(false);
                 openWorkerWindow(action, personId);
+                break;
                
                 //openWindow(action,path, personId, new String []{"Pensjonariusze", "Kwaterowanie", "Dane", "Wyloguj się"} );
             }
             case "PEN":{
                 TextLoginInvalidPassword.setVisible(false);
                 openBoarderWindow(action, personId);
+                break;
             }
             case "SZE":{
                 TextLoginInvalidPassword.setVisible(false);
                 openBossWindow(action, personId);
+                break;
             }
             default: {
                 TextLoginInvalidPassword.setVisible(true);
