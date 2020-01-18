@@ -11,16 +11,16 @@
         <tabs>
           <Tab text="Dane osobowe">
                <content>
-                  <fx:include source="FXMLBoarderDataScreen.fxml" />
+                  <fx:include fx:id="FXMLBoarderDataScreen" source="FXMLBoarderDataScreen.fxml" />                  
                </content></Tab>
             <Tab text="Pobyt">
                <content>
-                  <fx:include source="FXMLBoarderStayScreen.fxml" />
+                  <fx:include fx:id="FXMLBoarderStayScreen" source="FXMLBoarderStayScreen.fxml" />
                </content>
             </Tab>
-            <Tab text="Opłaty">
+            <Tab fx:id="tabPayment" text="Opłaty">
                <content>
-                  <fx:include source="FXMLBoarderPaymentScreen.fxml" />
+                  <fx:include fx:id="FXMLBoarderPaymentScreen" source="FXMLBoarderPaymentScreen.fxml" />
                </content>
             </Tab>
         </tabs>

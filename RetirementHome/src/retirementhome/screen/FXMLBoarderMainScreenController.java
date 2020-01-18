@@ -15,6 +15,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Tab;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 /**
@@ -24,6 +26,19 @@ import javafx.stage.Stage;
  */
 public class FXMLBoarderMainScreenController implements Initializable {
     private Integer boarderId;
+    
+    
+    @FXML
+    private FXMLBoarderPaymentScreenController FXMLBoarderPaymentScreenController;
+    
+    @FXML
+    private FXMLBoarderStayScreenController FXMLBoarderStayScreenController;
+
+    @FXML
+    private FXMLBoarderDataScreenController FXMLBoarderDataScreenController;    
+
+    @FXML
+    private Tab tabPayment;
     
     @FXML void buttonWylogujSieSetOnAction(ActionEvent event) throws IOException{
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/retirementhome/FXMLRetirementHome.fxml"));     
@@ -39,12 +54,16 @@ public class FXMLBoarderMainScreenController implements Initializable {
     
     public void setBoarderId( Integer id){
         this.boarderId = id;
+        FXMLBoarderPaymentScreenController.setBoarderId(id);
+        FXMLBoarderDataScreenController.setBoarderId(id);
+        FXMLBoarderStayScreenController.setBoarderId(id);
     }
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        //FXMLBoarderPaymentScreenController.setBoarderId(boarderId);
         // TODO
     }    
     

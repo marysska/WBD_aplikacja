@@ -17,6 +17,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
+import javafx.scene.control.Tab;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
@@ -28,6 +29,24 @@ import javafx.stage.Stage;
 public class FXMLWorkerMainScreenController implements Initializable {
 
     private Integer workerId;
+    
+    @FXML
+    private Tab TabPensjonariuszeUpdate;
+    
+    @FXML
+    private FXMLBoarderListScreenController FXMLBoarderListScreenController;
+
+    @FXML
+    private FXMLBoarderAccomodationScreenController FXMLBoarderAccomodationScreenController;
+
+    @FXML
+    private FXMLWorkerDataScreenController FXMLWorkerDataScreenController;
+
+
+    @FXML
+    void functionTabPensjonariusze() {
+        System.out.println("new change");
+    }
     
     @FXML void buttonWylogujSieSetOnAction(ActionEvent event) throws IOException{
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/retirementhome/FXMLRetirementHome.fxml"));     
@@ -43,13 +62,16 @@ public class FXMLWorkerMainScreenController implements Initializable {
     
     public void setWorkerId( Integer id){
         this.workerId = id;
+        FXMLBoarderListScreenController.setWorkerId(id);
+        FXMLBoarderAccomodationScreenController.setWorkerId(id);
+        FXMLWorkerDataScreenController.setWorkerId(id);
     }
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+
     }    
     
 }

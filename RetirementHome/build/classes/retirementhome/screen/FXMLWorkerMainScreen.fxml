@@ -5,22 +5,22 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" maxHeight="600.0" maxWidth="1000.0" minHeight="600.0" minWidth="1000.0" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="retirementhome.screen.FXMLWorkerMainScreenController">
+<AnchorPane id="AnchorPane" maxHeight="600.0" maxWidth="1000.0" minHeight="600.0" minWidth="1000.0" prefHeight="600.0" prefWidth="1000.0" stylesheets="@styles/MenuBarStyle.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="retirementhome.screen.FXMLWorkerMainScreenController">
    <children>
       <TabPane prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <tabs>
-          <Tab text="Pensjonariusze">
+          <Tab  onSelectionChanged="#functionTabPensjonariusze" text="Pensjonariusze">
                <content>
-                  <fx:include source="FXMLBoarderListScreen.fxml" />
+                  <fx:include fx:id="FXMLBoarderListScreen" source="FXMLBoarderListScreen.fxml" />
                </content></Tab>
             <Tab text="Zakwaterowanie">
                <content>
-                  <fx:include source="FXMLBoarderAccomodationScreen.fxml" />
+                  <fx:include fx:id="FXMLBoarderAccomodationScreen" source="FXMLBoarderAccomodationScreen.fxml" />
                </content>
             </Tab>
             <Tab text="Dane osobowe">
                <content>
-                  <fx:include source="FXMLWorkerDataScreen.fxml" />
+                  <fx:include fx:id="FXMLWorkerDataScreen" source="FXMLWorkerDataScreen.fxml" />
                </content>
             </Tab>
         </tabs>

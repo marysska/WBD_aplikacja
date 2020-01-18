@@ -25,11 +25,11 @@ public class FXMLBoarderListScreenController implements Initializable {
     private Integer workerId;
 
     @FXML
-    private Text textToDelete;
+    private Text textFX;
 
     public void setWorkerId(Integer id){
         this.workerId = id;
-        textToDelete.setText(workerId.toString());
+        textFX.setText(workerId.toString());
     }
     /**
      * Initializes the controller class.

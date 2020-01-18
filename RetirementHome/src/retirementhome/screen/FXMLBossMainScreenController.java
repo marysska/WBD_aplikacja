@@ -25,6 +25,20 @@ import javafx.stage.Stage;
 public class FXMLBossMainScreenController implements Initializable {
     private Integer workerId;
     
+    @FXML
+    private FXMLBoarderListScreenController FXMLBoarderListScreenController;
+    
+    @FXML
+    private FXMLWorkerListScreenController FXMLWorkerListScreenController;
+
+    @FXML
+    private FXMLBoarderAccomodationScreenController FXMLBoarderAccomodationScreenController;
+
+    @FXML
+    private FXMLWorkerDataScreenController FXMLWorkerDataScreenController;
+    
+    
+    
     @FXML void buttonWylogujSieSetOnAction(ActionEvent event) throws IOException{
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/retirementhome/FXMLRetirementHome.fxml"));     
             Parent root = (Parent)fxmlLoader.load();          
@@ -39,6 +53,10 @@ public class FXMLBossMainScreenController implements Initializable {
     
     public void setBossId( Integer id){
         this.workerId = id;
+        FXMLBoarderListScreenController.setWorkerId(id);
+        FXMLBoarderAccomodationScreenController.setWorkerId(id);
+        FXMLWorkerDataScreenController.setWorkerId(id); 
+        FXMLWorkerListScreenController.setWorkerId(id);
     }
     /**
      * Initializes the controller class.

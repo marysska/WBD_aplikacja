@@ -15,7 +15,7 @@ import javafx.fxml.Initializable;
  * @author Elitebook 840 G3
  */
 public class FXMLBoarderStayScreenController implements Initializable {
-
+    private Integer boarderId;
     /**
      * Initializes the controller class.
      */
@@ -23,5 +23,7 @@ public class FXMLBoarderStayScreenController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-    
+     public void setBoarderId(int nr){
+        this.boarderId = nr;
+    }    
 }

@@ -15,7 +15,8 @@ import javafx.fxml.Initializable;
  * @author Elitebook 840 G3
  */
 public class FXMLWorkerDataScreenController implements Initializable {
-
+    
+    private Integer workerId;
     /**
      * Initializes the controller class.
      */
@@ -23,5 +24,7 @@ public class FXMLWorkerDataScreenController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-    
+    public void setWorkerId(int id){
+        this.workerId = id;
+    }    
 }

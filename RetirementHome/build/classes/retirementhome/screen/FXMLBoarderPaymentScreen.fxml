@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="retirementhome.screen.FXMLBoarderPaymentScreenController">
-    
+<AnchorPane id="AnchorPane" maxHeight="600.0" maxWidth="1000.0" minHeight="600.0" minWidth="1000.0" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #326647;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="retirementhome.screen.FXMLBoarderPaymentScreenController">
+   <children>
+      <TableView fx:id="tablePayment" layoutX="145.0" layoutY="93.0" prefHeight="414.0" prefWidth="710.0">
+        <columns>
+          <TableColumn fx:id="tableColumnName" prefWidth="506.40000915527344" text="Należność" />
+          <TableColumn fx:id="tableColumnMoney" prefWidth="202.39999999999998" resizable="false" text="Kwota" />
+        </columns>
+      </TableView>
+   </children>
 </AnchorPane>

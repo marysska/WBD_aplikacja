@@ -11,19 +11,19 @@
         <tabs>
           <Tab text="Pracownicy">
                <content>
-                  <fx:include source="FXMLWorkerListScreen.fxml" />
+                  <fx:include fx:id="FXMLWorkerListScreen" source="FXMLWorkerListScreen.fxml" />
                </content></Tab>
             <Tab text="Pensjonariusze">
                <content>
-                  <fx:include source="FXMLBoarderListScreen.fxml" />
+                  <fx:include fx:id="FXMLBoarderListScreen" source="FXMLBoarderListScreen.fxml" />
                </content></Tab>
             <Tab text="Zakwaterowanie">
                <content>
-                  <fx:include source="FXMLBoarderAccomodationScreen.fxml" />
+                  <fx:include fx:id="FXMLBoarderAccomodationScreen" source="FXMLBoarderAccomodationScreen.fxml" />
                </content></Tab>
             <Tab text="Dane osobowe">
                <content>
-                  <fx:include source="FXMLWorkerDataScreen.fxml" />
+                  <fx:include fx:id="FXMLWorkerDataScreen" source="FXMLWorkerDataScreen.fxml" />
                </content></Tab>       
         </tabs>
       </TabPane>

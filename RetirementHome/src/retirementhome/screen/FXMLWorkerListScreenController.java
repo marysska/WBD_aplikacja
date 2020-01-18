@@ -16,12 +16,17 @@ import javafx.fxml.Initializable;
  */
 public class FXMLWorkerListScreenController implements Initializable {
 
+     private Integer workerId;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    } 
+    
+    public void setWorkerId(int id){
+        workerId = id;
+    }
     
 }

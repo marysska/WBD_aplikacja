@@ -15,13 +15,17 @@ import javafx.fxml.Initializable;
  * @author Elitebook 840 G3
  */
 public class FXMLBoarderDataScreenController implements Initializable {
-
+    private Integer boarderId;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        //System.out.print("lalka");
         // TODO
+    }
+    public void setBoarderId(int nr){
+        this.boarderId = nr;
     }    
     
 }

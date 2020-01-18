@@ -11,23 +11,20 @@
         <tabs>
           <Tab text="Pracownicy">
                <content>
-                  <fx:include source="FXMLBoarderListScreen.fxml" />
+                  <fx:include fx:id="FXMLWorkerListScreen" source="FXMLWorkerListScreen.fxml" />
                </content></Tab>
             <Tab text="Pensjonariusze">
                <content>
-                  <fx:include source="FXMLBoarderAccomodationScreen.fxml" />
-               </content>
-            </Tab>
+                  <fx:include fx:id="FXMLBoarderListScreen" source="FXMLBoarderListScreen.fxml" />
+               </content></Tab>
             <Tab text="Zakwaterowanie">
                <content>
-                  <fx:include source="FXMLWorkerDataScreen.fxml" />
-               </content>
-            </Tab>
+                  <fx:include fx:id="FXMLBoarderAccomodationScreen" source="FXMLBoarderAccomodationScreen.fxml" />
+               </content></Tab>
             <Tab text="Dane osobowe">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-              </content>
-            </Tab>
+               <content>
+                  <fx:include fx:id="FXMLWorkerDataScreen" source="FXMLWorkerDataScreen.fxml" />
+               </content></Tab>       
         </tabs>
       </TabPane>
       <Button layoutX="919.0" layoutY="2.0" mnemonicParsing="false" onAction="#buttonWylogujSieSetOnAction" text="Wyloguj się" AnchorPane.rightAnchor="3.6666666666666714" AnchorPane.topAnchor="2.0" />
