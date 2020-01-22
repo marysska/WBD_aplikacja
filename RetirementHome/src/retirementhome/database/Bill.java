@@ -77,4 +77,28 @@ public class Bill {
         return listBill;        
     }
     
+    
+    public String getActualMonth(Connection conn){
+        String month = "";
+        String sql = "select to_char(sysdate, 'Month') from dual";
+        
+        PreparedStatement stmt1;
+        ResultSet rs1;
+        try{
+            stmt1 = conn.prepareStatement(sql);
+
+            rs1 =stmt1.executeQuery();
+            while(rs1.next()){
+                month = rs1.getString(1);
+            }
+                 
+        }catch (SQLException exc){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error with data access");
+            alert.setContentText("Details: "+exc.getMessage());
+            alert.showAndWait();
+        }
+        return month;        
+    }
+    
 }

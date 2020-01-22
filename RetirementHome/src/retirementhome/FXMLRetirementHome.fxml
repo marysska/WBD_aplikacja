@@ -4,6 +4,7 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.Bloom?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -33,10 +34,13 @@
             </Text>
          </children>
       </AnchorPane>
-      <Text fontSmoothingType="LCD" layoutX="29.0" layoutY="46.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Witamy w Domu Seniora Ustronie!" wrappingWidth="274.5811767578125">
+      <Text fill="#336647" fontSmoothingType="LCD" layoutX="29.0" layoutY="49.0" stroke="#a91212" strokeType="OUTSIDE" strokeWidth="0.0" text="Witamy w Domu Seniora Ustronie!" wrappingWidth="333.24786376953125">
          <font>
-            <Font size="35.0" />
+            <Font name="System Bold" size="35.0" />
          </font>
+         <effect>
+            <Bloom threshold="0.79" />
+         </effect>
       </Text>
     </children>
 </AnchorPane>

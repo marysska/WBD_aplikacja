@@ -163,8 +163,8 @@ public class Boarder {
                 boarder.sex = rs.getString(5).charAt(0);
                 boarder.city = rs.getString(6);
                 boarder.street = rs.getString(7);
-                boarder.nrLocation = rs.getString(8);
-                boarder.nrHouse = rs.getString(9);
+                boarder.nrLocation = rs.getString(9);
+                boarder.nrHouse = rs.getString(8);
                 boarder.postCode = rs.getString(10);
                 boarder.birthDate = rs.getDate(11);
                 boarder.pesel = rs.getString(12);
@@ -341,7 +341,7 @@ public class Boarder {
         
     }
     
-    public int udateBoarder(Connection conn, int id,String doc,  String city, String street, String nrLoc, String nrHouse, String postCode ){
+    public int updateBoarder(Connection conn, int id,String doc,  String city, String street, String nrLoc, String nrHouse, String postCode ){
         if (postCode.charAt(2) != '-'){
             return -1;
         }
@@ -368,7 +368,7 @@ public class Boarder {
         return res;
     }
     
-    public void setBoardersValues(Connection conn, int id ){
+    public void setBoarderValues(Connection conn, int id ){
         String sql = "SELECT * from pensjonariusze where nr_pensjonariusza = ?";
         PreparedStatement stmt;
         ResultSet rs;
@@ -408,7 +408,7 @@ public class Boarder {
     public ObservableList<Boarder> getRoommates(Connection conn, int myId, int idRoom){
         ObservableList<Boarder> listBoarder = FXCollections.observableArrayList();
         Date date= new Date(Calendar.getInstance().getTime().getTime());
-        String sql ="select * from pesnnnjonariusze where id_pensjonariusza is not ? and id_pensjonariusza in (select id_pensjonariusza from pobyty pob where nr_pokoju = ? "
+        String sql ="select * from pensjonariusze where id_pensjonariusza is not ? and id_pensjonariusza in (select id_pensjonariusza from pobyty pob where nr_pokoju = ? "
                 + "and (data_wypisu is null or data_wypisu > ?))";
         PreparedStatement stmt;
         ResultSet rs;

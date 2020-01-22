@@ -14,6 +14,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.text.Text;
 import retirementhome.DBConnection;
 import retirementhome.database.Bill;
 
@@ -42,6 +43,12 @@ public class FXMLBoarderPaymentScreenController implements Initializable {
     @FXML
     private TableColumn<Bill, Float> tableColumnMoney;
     
+    @FXML
+    private Text paymentMonth;
+
+    @FXML
+    private Text paymentSum;
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         conn = DBConnection.getConnection();
@@ -52,10 +59,18 @@ public class FXMLBoarderPaymentScreenController implements Initializable {
     public void set(){
         Bill bill = new Bill();
         listBills = bill.getBoardersBill(conn, boarderId);
+        float billSum = 0;
+        billSum = listBills.stream().map((b) -> b.getPrice()).reduce(billSum, (accumulator, _item) -> accumulator + _item);
+        String month = bill.getActualMonth(conn);
+                
+        paymentSum.setText(Float.toString(billSum)+" zł");
+        paymentMonth.setText(month.toUpperCase());
         
         tableColumnName.setCellValueFactory(new PropertyValueFactory<>("name"));
         tableColumnMoney.setCellValueFactory(new PropertyValueFactory<>("price"));
         tablePayment.setItems(listBills);
+        
+        
     }
     
     public void setBoarderId(int nr){
