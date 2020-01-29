@@ -417,7 +417,7 @@ public class FXMLBoarderListScreenController implements Initializable {
             //tworazenie nowego
             Alert alert= new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Potwierdź");
-            alert.setContentText("Czy chcesz wprowadzić nowego pracownika?");
+            alert.setContentText("Czy chcesz wprowadzić nowego pensjonariusza?");
             Optional<ButtonType> type = alert.showAndWait();
             if(type.get()==ButtonType.OK){
                 saveAdd();
@@ -504,7 +504,7 @@ public class FXMLBoarderListScreenController implements Initializable {
             sex = 'K';
         }
         
-        if(street == null || hause== null || document == null || postcode == null || city == null || name == null || surname == null || pesel == null || date == null || (!femaleCheck.isSelected() && !maleCheck.isSelected())){
+        if(street == null || hause== null || document == null || postcode == null || city == null || name == null || surname == null || date == null || (!femaleCheck.isSelected() && !maleCheck.isSelected())){
             
             Alert alert= new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Błąd");
@@ -529,7 +529,7 @@ public class FXMLBoarderListScreenController implements Initializable {
             alert.show();
             return;              
         }
-        if(!isGoodPesel(date1, pesel)){
+        if(pesel != null && !isGoodPesel(date1, pesel)){
             Alert alert= new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Błąd");
             alert.setContentText("Proszę podać poprawny pesel");

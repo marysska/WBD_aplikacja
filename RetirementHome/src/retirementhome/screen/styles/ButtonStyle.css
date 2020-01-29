@@ -1,0 +1,25 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 15 sty 2020, 22:31:27
+    Author     : Elitebook 840 G3
+*/
+
+.button {
+    -fx-alignment: CENTER;
+    -fx-text-fill: whitesmoke;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-background-color: #326647;
+}
+.button:selected { 
+    -fx-alignment: CENTER;
+    -fx-text-fill: #FFFFF0;
+}
+
+.button{
+    -fx-background-insets: 0 1 0 1,0,0;
+}
