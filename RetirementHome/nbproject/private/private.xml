@@ -3,15 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Elitebook%20840%20G3/Desktop/projektWBD/RetirementHome/src/retirementhome/database/Room.java</file>
-            <file>file:/C:/Users/Elitebook%20840%20G3/Desktop/projektWBD/RetirementHome/src/retirementhome/database/Offer.java</file>
-            <file>file:/C:/Users/Elitebook%20840%20G3/Desktop/projektWBD/RetirementHome/src/retirementhome/screen/FXMLBoarderDataScreenController.java</file>
-            <file>file:/C:/Users/Elitebook%20840%20G3/Desktop/projektWBD/RetirementHome/src/retirementhome/database/Stay.java</file>
-            <file>file:/C:/Users/Elitebook%20840%20G3/Desktop/projektWBD/RetirementHome/src/retirementhome/database/Boarder.java</file>
-            <file>file:/C:/Users/Elitebook%20840%20G3/Desktop/projektWBD/RetirementHome/src/retirementhome/database/RoomType.java</file>
-            <file>file:/C:/Users/Elitebook%20840%20G3/Desktop/projektWBD/RetirementHome/src/retirementhome/database/Bill.java</file>
-            <file>file:/C:/Users/Elitebook%20840%20G3/Desktop/projektWBD/RetirementHome/src/retirementhome/database/Account.java</file>
-            <file>file:/C:/Users/Elitebook%20840%20G3/Desktop/projektWBD/RetirementHome/src/retirementhome/screen/FXMLBoarderPaymentScreenController.java</file>
+            <file>file:/C:/Users/marys/studia/semestr7/WBD/apka-2901/WBD_aplikacja/RetirementHome/src/retirementhome/DBConnection.java</file>
+            <file>file:/C:/Users/marys/studia/semestr7/WBD/apka-2901/WBD_aplikacja/RetirementHome/src/retirementhome/FXMLRetirementHomeController.java</file>
+            <file>file:/C:/Users/marys/studia/semestr7/WBD/apka-2901/WBD_aplikacja/RetirementHome/src/retirementhome/screen/styles/MenuBarStyle.css</file>
+            <file>file:/C:/Users/marys/studia/semestr7/WBD/apka-2901/WBD_aplikacja/RetirementHome/src/retirementhome/FXMLRetirementHome.fxml</file>
         </group>
     </open-files>
 </project-private>
