@@ -3,8 +3,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="retirementhome.screen.FXMLWorkerDataScreenController">
+<AnchorPane id="AnchorPane" maxHeight="600.0" maxWidth="1200.0" minHeight="600.0" minWidth="1200.0" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: #326647;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="retirementhome.screen.FXMLWorkerDataScreenController">
    <children>
       <Text layoutX="216.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="wORKER DATA SCREEN" />
    </children>

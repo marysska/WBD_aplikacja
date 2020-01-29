@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600.0" minWidth="1000.0" prefHeight="600.0" prefWidth="1000.0" snapToPixel="false" style="-fx-background-color: #19A56F;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="retirementhome.screen.FXMLBoarderListScreenController">
+<AnchorPane id="AnchorPane" maxHeight="600.0" maxWidth="1200.0" minHeight="600.0" minWidth="1200.0" prefHeight="600.0" prefWidth="1200.0" snapToPixel="false" style="-fx-background-color: #326647;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="retirementhome.screen.FXMLBoarderListScreenController">
    <children>
       <Text fx:id="textFX" layoutX="644.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="s" wrappingWidth="184.5367431640625" />
       <TextField layoutX="14.0" layoutY="58.0" promptText="Imię" />
