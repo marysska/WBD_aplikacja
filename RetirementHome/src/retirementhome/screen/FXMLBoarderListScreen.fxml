@@ -35,7 +35,7 @@
         </columns>
       </TableView>
       <Button fx:id="addButton" layoutX="132.0" layoutY="496.0" mnemonicParsing="false" onAction="#onAddButtonClick" prefHeight="25.0" prefWidth="79.0" text="Dodaj" textFill="#326647" />
-      <Button fx:id="deleteButton" layoutX="580.0" layoutY="496.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="79.0" text="Usuń" textFill="#326647" />
+      <Button fx:id="deleteButton" layoutX="580.0" layoutY="496.0" mnemonicParsing="false" onAction="#onDeleteButtonClick" prefHeight="25.0" prefWidth="79.0" text="Usuń" textFill="#326647" />
       <Button fx:id="modifyButton" layoutX="358.0" layoutY="496.0" mnemonicParsing="false" onAction="#onModifyButtonClick" prefHeight="25.0" prefWidth="79.0" text="Modyfikuj" textFill="#326647" />
       <AnchorPane layoutX="874.0" layoutY="47.0" prefHeight="506.0" prefWidth="306.0" style="-fx-background-color: ivory;">
          <children>
@@ -103,11 +103,11 @@
             <TextField fx:id="streetPole" layoutX="150.0" layoutY="160.0" prefHeight="20.0" prefWidth="150.0" promptText="Ulica" />
             <TextField fx:id="documentPole" layoutX="150.0" layoutY="120.0" prefHeight="20.0" prefWidth="150.0" promptText="Nr dokumentu" />
             <TextField fx:id="surnamePole" layoutX="150.0" layoutY="55.0" prefHeight="20.0" prefWidth="150.0" promptText="Nazwisko" />
-            <TextField fx:id="cityPole" layoutX="150.0" layoutY="300.0" prefHeight="20.0" prefWidth="150.0" promptText="Misto" />
+            <TextField fx:id="cityPole" layoutX="150.0" layoutY="300.0" prefHeight="20.0" prefWidth="150.0" promptText="Miasto" />
             <TextField fx:id="PESELPole" layoutX="150.0" layoutY="370.0" prefHeight="20.0" prefWidth="150.0" promptText="PESEL" />
             <DatePicker fx:id="datePole" layoutX="150.0" layoutY="335.0" prefHeight="20.0" prefWidth="150.0" />
-            <CheckBox fx:id="femaleCheck" layoutX="150.0" layoutY="90.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" text="K" textFill="#326647" />
-            <CheckBox fx:id="maleCheck" layoutX="200.0" layoutY="90.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" text="M" textFill="#326647" />
+            <CheckBox fx:id="femaleCheck" layoutX="150.0" layoutY="90.0" mnemonicParsing="false" onAction="#onCheckFemale" prefHeight="20.0" prefWidth="20.0" text="K" textFill="#326647" />
+            <CheckBox fx:id="maleCheck" layoutX="200.0" layoutY="90.0" mnemonicParsing="false" onAction="#onCheckMale" prefHeight="20.0" prefWidth="20.0" text="M" textFill="#326647" />
          </children>
       </AnchorPane>
    </children>

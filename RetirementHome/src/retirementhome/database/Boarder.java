@@ -271,7 +271,34 @@ public class Boarder {
         }
         return listBoarder;
     }
-    
+    public boolean isCurrent(Connection conn, int id)
+    {
+        Date date= new Date(Calendar.getInstance().getTime().getTime());
+        String sql = "SELECT count(*) from pobyty where nr_pensjonariusza = ? and"
+                + "(data_wypisu is null or data_wypisu > ? )";
+        PreparedStatement stmt;
+        boolean result = false;
+        ResultSet rs;
+        try{
+            stmt = conn.prepareStatement(sql);
+            stmt.setInt(1,id);
+            stmt.setDate(2, date) ;
+            rs =stmt.executeQuery();
+            while(rs.next()){
+                int num = rs.getInt(1);
+                if(num == 1){
+                    result = true;
+                }
+            }
+            
+        }catch (SQLException exc){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error with data access ");
+            alert.setContentText("Details: "+exc.getMessage());
+            alert.showAndWait();
+        }
+        return result;
+    }
     public ObservableList<Boarder> getCurrentsBoarders(Connection conn){
         ObservableList<Boarder> listBoarder = FXCollections.observableArrayList();
         Date date= new Date(Calendar.getInstance().getTime().getTime());
@@ -313,6 +340,23 @@ public class Boarder {
             alert.showAndWait();
         }
         return listBoarder;
+    }
+    
+    public int deleteBoarder(Connection conn, int id){
+        String sql = "Delete from pensjonariusze where nr_pensjonariusza = ? ";
+        PreparedStatement stmt;
+        Integer res = 0;
+        try{
+            stmt = conn.prepareStatement(sql);
+            stmt.setInt(1, id);           
+            res = stmt.executeUpdate();
+        }catch(SQLException exc){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error with deleting data 33");
+            alert.setContentText("Details: "+exc.getMessage());
+            alert.showAndWait();            
+        }
+        return res;        
     }
     
     public ObservableList<Boarder> getCurrentsFreeBoarders(Connection conn){

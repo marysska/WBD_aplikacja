@@ -144,6 +144,16 @@ public class FXMLBoarderListScreenController implements Initializable {
     @FXML
     private CheckBox maleCheck;
     
+    @FXML 
+    public void onCheckFemale(ActionEvent action){
+        maleCheck.setSelected(false);
+    }
+    
+    @FXML 
+    public void onCheckMale(ActionEvent action){
+        femaleCheck.setSelected(false);
+    }
+    
     private ObservableList<Boarder> listBoarders;
 
     public void setWorkerId(Integer id){
@@ -419,8 +429,65 @@ public class FXMLBoarderListScreenController implements Initializable {
     }
     
     
+    @FXML
+    public void onDeleteButtonClick(ActionEvent action){
+        int rowid = tableBoarders.getSelectionModel().getSelectedIndex();
+        if(rowid < 0){
+            Alert alert= new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Błąd");
+            alert.setContentText("Proszę zaznaczyć w tabeli pensjonariusza do usunięcia");
+            alert.show();
+        }
+        else{
+            Boarder boarder = new Boarder();
+            nrBoarderModified = tableBoarders.getSelectionModel().getSelectedItem().getNrBoarder();
+            if(nrBoarderModified < 0){
+                Alert alert= new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Błąd");
+                alert.setContentText("Nie można znaleźć pensjonariusza w bazie danych");
+                alert.show();              
+            }
+            Alert alert= new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Potwierdź");
+            alert.setContentText("Czy chcesz usunąć pensjonariusza?");
+            Optional<ButtonType> type = alert.showAndWait();
+            if(type.get()==ButtonType.OK){
+                boarder.setBoarderValues(conn, nrBoarderModified);
+                delete(boarder);
+            }
+            else{
+                return;
+            }
+            
+        }    
+    }
+    
+    private void delete(Boarder boarder){
+        if(boarder.isCurrent(conn, boarder.getNrBoarder())){
+                Alert alert= new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Błąd");
+                alert.setContentText("Nie można usunąć aktualnie zakwaterowanego pensjonariusza!");
+                alert.show();     
+                return;
+        }
+        int res = boarder.deleteBoarder(conn, boarder.getNrBoarder());
+        if(res != 1){
+            Alert alert= new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Błąd");
+            alert.setContentText("Operacja nie powiodła się, usunięto: "+Integer.toString(res));
+            alert.show();     
+            return;            
+        }
+        Alert alert= new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Sukces");
+        alert.setContentText("Usunięto pensjonariusza! ");
+        alert.show();
+        setTable();
+                   
+    }
+    
+    
     private void saveAdd(){
-        System.out.println("jestem");
         String street = streetPole.getText();
         String hause = homeNrPole.getText();
         String flat = flatNrPole.getText();
