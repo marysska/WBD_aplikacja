@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="RetirementHome.jar" size="289665" download="eager" />
+    <jar href="RetirementHome.jar" size="296966" download="eager" />
     <jar href="lib\ojdbc6.jar" size="2739670" download="eager" />
   </resources>
   <jfx:javafx-desc  width="800" height="600" main-class="retirementhome.RetirementHome"  name="RetirementHome" />

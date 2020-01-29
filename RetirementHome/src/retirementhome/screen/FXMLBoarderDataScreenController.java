@@ -53,16 +53,16 @@ public class FXMLBoarderDataScreenController implements Initializable {
         boarderFieldNazwisko.setText(boarder.getLastName());
         boarderFieldDokument.setText(boarder.getNrDocument());
         String pesel = boarder.getPesel();
-        String lokal = boarder.getNrHouse();
+        String lokal = boarder.getNrFlat();
         if(pesel == null){
             pesel = "-";
         }
         if(lokal == null){
             lokal = "";
         }
-        System.out.println(boarder.getNrHouse());
+        System.out.println(boarder.getNrFlat());
         boarderFieldPesel.setText(pesel);
-        boarderFieldAdres1.setText(boarder.getStreet() + " "+ boarder.getNrLocation() + " " + lokal);
+        boarderFieldAdres1.setText(boarder.getStreet() + " "+ boarder.getNrHause() + " " + lokal);
         boarderFieldAdres2.setText(boarder.getPostCode() + ", " + boarder.getCity());
         boarderFieldData.setText(boarder.getBirthDate().toString());
     }

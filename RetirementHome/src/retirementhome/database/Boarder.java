@@ -26,8 +26,8 @@ public class Boarder {
     private char sex;
     private String city;
     private String street;
-    private String nrLocation;
-    private String nrHouse;
+    private String nrHause;
+    private String nrFlat;
     private String postCode;
     private Date birthDate;
     private String pesel;
@@ -90,20 +90,20 @@ public class Boarder {
         this.street = street;
     }
 
-    public String getNrLocation() {
-        return nrLocation;
+    public String getNrHause() {
+        return nrHause;
     }
 
-    public void setNrLocation(String nrLocation) {
-        this.nrLocation = nrLocation;
+    public void setNrHause(String nrHause) {
+        this.nrHause = nrHause;
     }
 
-    public String getNrHouse() {
-        return nrHouse;
+    public String getNrFlat() {
+        return nrFlat;
     }
 
-    public void setNrHouse(String nrHouse) {
-        this.nrHouse = nrHouse;
+    public void setNrFlat(String nrHouse) {
+        this.nrFlat = nrHouse;
     }
 
     public String getPostCode() {
@@ -148,7 +148,7 @@ public class Boarder {
 
     public ObservableList<Boarder> getAll(Connection conn){
         ObservableList<Boarder> listBoarder = FXCollections.observableArrayList();
-        String sql = "SELECT * from pensjonariusze order by nr_rensjonariusza";
+        String sql = "SELECT * from pensjonariusze order by nr_pensjonariusza";
         Statement stmt;
         ResultSet rs;
         try{
@@ -163,8 +163,8 @@ public class Boarder {
                 boarder.sex = rs.getString(5).charAt(0);
                 boarder.city = rs.getString(6);
                 boarder.street = rs.getString(7);
-                boarder.nrLocation = rs.getString(9);
-                boarder.nrHouse = rs.getString(8);
+                boarder.nrHause = rs.getString(9);
+                boarder.nrFlat = rs.getString(8);
                 boarder.postCode = rs.getString(10);
                 boarder.birthDate = rs.getDate(11);
                 boarder.pesel = rs.getString(12);
@@ -186,7 +186,9 @@ public class Boarder {
     
     public ObservableList<Boarder> getByName(Connection conn, String name, String lastName){
         ObservableList<Boarder> listBoarder = FXCollections.observableArrayList();
-        String sql = "SELECT * from pensjonariusze where imie is like ? and nazwisko is like ? order by nr_rensjonariusza";
+        String sql = "SELECT * from pensjonariusze where imie like ? and nazwisko like ? order by nr_pensjonariusza";
+        System.out.println(name);
+        System.out.println(lastName);
         PreparedStatement stmt;
         ResultSet rs;
         try{
@@ -203,8 +205,54 @@ public class Boarder {
                 boarder.sex = rs.getString(5).charAt(0);
                 boarder.city = rs.getString(6);
                 boarder.street = rs.getString(7);
-                boarder.nrLocation = rs.getString(8);
-                boarder.nrHouse = rs.getString(9);
+                boarder.nrHause = rs.getString(8);
+                boarder.nrFlat = rs.getString(9);
+                boarder.postCode = rs.getString(10);
+                boarder.birthDate = rs.getDate(11);
+                boarder.pesel = rs.getString(12);
+                boarder.additionalInfo = rs.getString(13);
+                boarder.nrRetirementHome = rs.getInt(14);
+                
+                listBoarder.add(boarder);
+
+            }
+  
+        }catch (SQLException exc){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error with data access");
+            alert.setContentText("Details: "+exc.getMessage());
+            alert.showAndWait();
+        }
+        return listBoarder;
+    }
+    
+    
+    
+    public ObservableList<Boarder> getByNameFree(Connection conn, String name, String lastName){
+        ObservableList<Boarder> listBoarder = FXCollections.observableArrayList();
+        String sql = "SELECT * from pensjonariusze where imie like ? and nazwisko like ? "
+                + "and nr_pensjonariusza not in (select nr_pensjonariusza from Pobyty where data_wypisu is null or data_wypisu > ?)"
+                + "order by nr_pensjonariusza";
+        Date date= new Date(Calendar.getInstance().getTime().getTime());
+        PreparedStatement stmt;
+        ResultSet rs;
+        try{
+            stmt = conn.prepareStatement(sql);
+            stmt.setString(1, name+"%") ;
+            stmt.setString(2, lastName+"%");
+            stmt.setDate(3, date);
+            rs =stmt.executeQuery();
+            while(rs.next()){
+                Boarder boarder = new Boarder();
+                boarder.nrBoarder = rs.getInt(1);
+                boarder.name = rs.getString(2);
+                boarder.lastName = rs.getString(3);
+                boarder.nrDocument = rs.getString(4);
+                boarder.sex = rs.getString(5).charAt(0);
+                boarder.city = rs.getString(6);
+                boarder.street = rs.getString(7);
+                boarder.nrHause = rs.getString(8);
+                boarder.nrFlat = rs.getString(9);
                 boarder.postCode = rs.getString(10);
                 boarder.birthDate = rs.getDate(11);
                 boarder.pesel = rs.getString(12);
@@ -246,8 +294,8 @@ public class Boarder {
                 boarder.sex = rs.getString(5).charAt(0);
                 boarder.city = rs.getString(6);
                 boarder.street = rs.getString(7);
-                boarder.nrLocation = rs.getString(8);
-                boarder.nrHouse = rs.getString(9);
+                boarder.nrHause = rs.getString(8);
+                boarder.nrFlat = rs.getString(9);
                 boarder.postCode = rs.getString(10);
                 boarder.birthDate = rs.getDate(11);
                 boarder.pesel = rs.getString(12);
@@ -289,8 +337,8 @@ public class Boarder {
                 boarder.sex = rs.getString(5).charAt(0);
                 boarder.city = rs.getString(6);
                 boarder.street = rs.getString(7);
-                boarder.nrLocation = rs.getString(8);
-                boarder.nrHouse = rs.getString(9);
+                boarder.nrHause = rs.getString(8);
+                boarder.nrFlat = rs.getString(9);
                 boarder.postCode = rs.getString(10);
                 boarder.birthDate = rs.getDate(11);
                 boarder.pesel = rs.getString(12);
@@ -311,8 +359,8 @@ public class Boarder {
     }
 
     public int insertBoarder(Connection conn, String name, String lastName, String doc, char sex, String city, String street, String nrLoc, String nrHouse, String postCode, Date birthDate, String pesel){
-        String sql = "insert into Pensjonariusze(imie, nazwisko, nr_dokumentu_pensjonariusza, plec, miasto, ulica, nr_posesji, nr_lokalu, kod_pocztowy, data_urodzenia, pesel, nr_domu_seniora"+
-                "values(?,?,?,?,?,?,?,?,?,?,?,1)";
+        String sql = "insert into Pensjonariusze(imie, nazwisko, nr_dokumentu_pensjonariusza, plec, miasto, ulica, nr_posesji, nr_lokalu, kod_pocztowy, data_urodzenia, pesel, nr_domu_seniora)"+
+                " values(?,?,?,?,?,?,?,?,?,?,?,1)";
         PreparedStatement stmt;
         Integer res = 0;
         try{
@@ -345,7 +393,7 @@ public class Boarder {
         if (postCode.charAt(2) != '-'){
             return -1;
         }
-        String sql = "update pensjonariusze set nr_dokumentu_pensjonariusza = ? , miasto = ? , ulica= ? , m nr_domu = ? , nr_lokalu = ? , kod_pocztowy = ? where nr_pensjonariusza = ? ";
+        String sql = "update pensjonariusze set nr_dokumentu_pensjonariusza = ? , miasto = ? , ulica = ? , nr_posesji = ? , nr_lokalu = ? , kod_pocztowy = ? where nr_pensjonariusza = ? ";
         PreparedStatement stmt;
         Integer res = 0;
         try{
@@ -385,8 +433,8 @@ public class Boarder {
                 this.sex = rs.getString(5).charAt(0);
                 this.city = rs.getString(6);
                 this.street = rs.getString(7);
-                this.nrLocation = rs.getString(8);
-                this.nrHouse = rs.getString(9);
+                this.nrHause = rs.getString(8);
+                this.nrFlat = rs.getString(9);
                 this.postCode = rs.getString(10);
                 this.birthDate = rs.getDate(11);
                 this.pesel = rs.getString(12);
@@ -426,8 +474,8 @@ public class Boarder {
                 boarder.sex = rs.getString(5).charAt(0);
                 boarder.city = rs.getString(6);
                 boarder.street = rs.getString(7);
-                boarder.nrLocation = rs.getString(8);
-                boarder.nrHouse = rs.getString(9);
+                boarder.nrHause = rs.getString(8);
+                boarder.nrFlat = rs.getString(9);
                 boarder.postCode = rs.getString(10);
                 boarder.birthDate = rs.getDate(11);
                 boarder.pesel = rs.getString(12);
