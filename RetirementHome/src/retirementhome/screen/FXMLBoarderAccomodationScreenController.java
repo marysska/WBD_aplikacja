@@ -368,7 +368,7 @@ public class FXMLBoarderAccomodationScreenController implements Initializable {
             if(result == 1){
                 Alert alert1= new Alert(Alert.AlertType.INFORMATION);
                 alert1.setTitle("Sukces");
-                alert1.setContentText("Zakwaterowano pensjonariusza");
+                alert.setContentText("Zakwaterowano " +tabelPensjonariusz.getSelectionModel().getSelectedItem().getName()+" "+tabelPensjonariusz.getSelectionModel().getSelectedItem().getLastName() +"!");
                 alert1.show(); 
             }
             else{
@@ -396,7 +396,7 @@ public class FXMLBoarderAccomodationScreenController implements Initializable {
             if(result == 1){
                 Alert alert1= new Alert(Alert.AlertType.INFORMATION);
                 alert1.setTitle("Sukces");
-                alert1.setContentText("Wykwaterowano pensjonariusza");
+                alert1.setContentText("Wykwaterowano " +tabelPensjonariusz.getSelectionModel().getSelectedItem().getName()+" "+tabelPensjonariusz.getSelectionModel().getSelectedItem().getLastName() +"!");
                 alert1.show(); 
             }
             else{

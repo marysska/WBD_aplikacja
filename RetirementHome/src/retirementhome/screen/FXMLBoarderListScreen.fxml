@@ -110,5 +110,6 @@
             <CheckBox fx:id="maleCheck" layoutX="200.0" layoutY="90.0" mnemonicParsing="false" onAction="#onCheckMale" prefHeight="20.0" prefWidth="20.0" text="M" textFill="#326647" />
          </children>
       </AnchorPane>
+      <AnchorPane layoutX="172.0" layoutY="370.0" prefHeight="200.0" prefWidth="200.0" />
    </children>
 </AnchorPane>

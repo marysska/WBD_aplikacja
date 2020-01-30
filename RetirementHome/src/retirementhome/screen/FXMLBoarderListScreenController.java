@@ -370,7 +370,7 @@ public class FXMLBoarderListScreenController implements Initializable {
         if(result ==1){
             Alert alert= new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Zaktualizowano dane!");
-            alert.setContentText("Udało się zaktualizować dane pensjonariuszowi");
+            alert.setContentText("Udało się zaktualizować dane pensjonariuszowi "+namePole.getText()+" "+surnamePole.getText()+"!");
             alert.show();             
         }else{
             Alert alert= new Alert(Alert.AlertType.ERROR);
@@ -403,7 +403,7 @@ public class FXMLBoarderListScreenController implements Initializable {
             //modyfikacja
             Alert alert= new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Potwierdź");
-            alert.setContentText("Czy chcesz wprowadzić zmiany?");
+            alert.setContentText("Czy chcesz wprowadzić zmiany dla "+namePole.getText()+" "+surnamePole.getText()+"?");
             Optional<ButtonType> type = alert.showAndWait();
             if(type.get()==ButtonType.OK){
                 saveModify();
@@ -417,7 +417,7 @@ public class FXMLBoarderListScreenController implements Initializable {
             //tworazenie nowego
             Alert alert= new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Potwierdź");
-            alert.setContentText("Czy chcesz wprowadzić nowego pensjonariusza?");
+            alert.setContentText("Czy chcesz wprowadzić nowego pensjonariusza "+namePole.getText()+" "+surnamePole.getText()+"?");
             Optional<ButtonType> type = alert.showAndWait();
             if(type.get()==ButtonType.OK){
                 saveAdd();
@@ -449,7 +449,7 @@ public class FXMLBoarderListScreenController implements Initializable {
             }
             Alert alert= new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Potwierdź");
-            alert.setContentText("Czy chcesz usunąć pensjonariusza?");
+            alert.setContentText("Czy chcesz usunąć pensjonariusza "+ tableBoarders.getSelectionModel().getSelectedItem().getName()+" "+ tableBoarders.getSelectionModel().getSelectedItem().getLastName()+"?");
             Optional<ButtonType> type = alert.showAndWait();
             if(type.get()==ButtonType.OK){
                 boarder.setBoarderValues(conn, nrBoarderModified);
@@ -542,7 +542,7 @@ public class FXMLBoarderListScreenController implements Initializable {
         if(result ==1){
             Alert alert= new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Wstawiono pensjonariusza!");
-            alert.setContentText("Udało się wstawić nowego pensjonariusza");
+            alert.setContentText("Udało się wstawić nowego pensjonariusza "+namePole.getText()+" "+surnamePole.getText()+"!");
             alert.show();             
         }else{
             Alert alert= new Alert(Alert.AlertType.ERROR);
