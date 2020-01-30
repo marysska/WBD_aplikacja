@@ -73,7 +73,7 @@ public class Stay {
     }
     public Stay getCurrentStay(Connection conn, int nrBoarder){
         Date date= new Date(Calendar.getInstance().getTime().getTime());
-        String sql = "select * from pobytu where nr_pensjonariusza = ? and (data_wypisu is null or data_wypisu > ? )";
+        String sql = "select * from Pobyty where nr_pensjonariusza = ? and (data_wypisu is null or data_wypisu > ? )";
    
         PreparedStatement stmt;
         ResultSet rs;

@@ -500,7 +500,7 @@ public class Boarder {
     public ObservableList<Boarder> getRoommates(Connection conn, int myId, int idRoom){
         ObservableList<Boarder> listBoarder = FXCollections.observableArrayList();
         Date date= new Date(Calendar.getInstance().getTime().getTime());
-        String sql ="select * from pensjonariusze where id_pensjonariusza is not ? and id_pensjonariusza in (select id_pensjonariusza from pobyty pob where nr_pokoju = ? "
+        String sql ="select * from pensjonariusze where nr_pensjonariusza  not in ( ? ) and nr_pensjonariusza in (select nr_pensjonariusza from pobyty pob where nr_pokoju = ? "
                 + "and (data_wypisu is null or data_wypisu > ?))";
         PreparedStatement stmt;
         ResultSet rs;
@@ -510,6 +510,8 @@ public class Boarder {
             stmt.setInt(2, idRoom);
             stmt.setDate(3, date);
             rs =stmt.executeQuery();
+            while(rs.next())
+            {
                 Boarder boarder = new Boarder();
                 boarder.nrBoarder = rs.getInt(1);
                 boarder.name = rs.getString(2);
@@ -527,11 +529,11 @@ public class Boarder {
                 boarder.nrRetirementHome = rs.getInt(14);
                 
                 listBoarder.add(boarder);
-
+            }
   
         }catch (SQLException exc){
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error with data access");
+            alert.setTitle("Error with data access 99");
             alert.setContentText("Details: "+exc.getMessage());
             alert.showAndWait();
         }

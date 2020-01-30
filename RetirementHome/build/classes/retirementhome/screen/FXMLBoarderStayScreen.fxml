@@ -1,8 +1,152 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.layout.AnchorPane?>
-
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane id="AnchorPane" maxHeight="600.0" maxWidth="1200.0" minHeight="600.0" minWidth="1200.0" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: #326647;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="retirementhome.screen.FXMLBoarderStayScreenController">
-    
+   <children>
+      <AnchorPane layoutX="80.0" layoutY="80.0" prefHeight="420.0" prefWidth="340.0" style="-fx-background-color: ivory;">
+         <children>
+            <Text fill="#326647" layoutX="70.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Twoja oferta:">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Text>
+            <Text fill="#326647" layoutX="70.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pobyt:">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Text>
+            <Text fill="#326647" layoutX="20.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Od:">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Text fill="#326647" layoutX="180.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Do:">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Text fx:id="poleDateFrom" fill="#326647" layoutX="60.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DATAOD" wrappingWidth="99.193359375">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Text fx:id="poleDateTo" fill="#326647" layoutX="220.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DATADO" wrappingWidth="99.193359375">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Text fill="#326647" layoutX="20.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nazwa:">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Text fill="#326647" layoutX="20.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cena:">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Text fx:id="poleNameOffer" fill="#326647" layoutX="40.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NAZWA" wrappingWidth="264.5267028808594">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Text fx:id="polePrice" fill="#326647" layoutX="40.0" layoutY="350.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CENA" wrappingWidth="264.5267028808594">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="520.0" layoutY="80.0" prefHeight="270.0" prefWidth="580.0" style="-fx-background-color: ivory;">
+         <children>
+            <Text fill="#326647" layoutX="94.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Twój pokój:">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Text>
+            <Text fill="#326647" layoutX="20.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nr pomieszczenia:">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Text fx:id="poleFloor" fill="#326647" layoutX="380.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NR PIETRA">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Text fx:id="poleStandard" fill="#326647" layoutX="300.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="STANDARD">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Text fill="#326647" layoutX="20.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liczba łóżek:">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Text fill="#326647" layoutX="300.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Obecność łazienki:">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Text fill="#326647" layoutX="160.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Standard pokoju:">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Text fill="#326647" layoutX="300.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nr piętra:">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Text fx:id="poleNrRoom" fill="#326647" layoutX="160.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NR POMIESZ">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Text fx:id="poleBeds" fill="#326647" layoutX="130.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="L ŁÓŻEK">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Text fx:id="poleBath" fill="#326647" layoutX="450.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ŁAZIENKA">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="520.0" layoutY="370.0" prefHeight="130.0" prefWidth="580.0" style="-fx-background-color: ivory;">
+         <children>
+            <Text fill="#326647" layoutX="39.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Współlokator:">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Text>
+            <Text fill="#326647" layoutX="50.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Imię:">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Text fill="#326647" layoutX="270.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nazwisko:">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Text fx:id="poleName" fill="#326647" layoutX="150.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="IMIE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Text fx:id="poleSurname" fill="#326647" layoutX="370.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NAZWISKO">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+   </children>
 </AnchorPane>
