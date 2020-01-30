@@ -155,5 +155,8 @@ public class Offer {
         }
         return listOffer;        
     }
+     public String toString(){
+         return name;
+     }
     
 }

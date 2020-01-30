@@ -2,6 +2,13 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/marys/studia/semestr7/WBD/apka-poAli/WBD_aplikacja/RetirementHome/src/retirementhome/database/RoomType.java</file>
+            <file>file:/C:/Users/marys/studia/semestr7/WBD/apka-poAli/WBD_aplikacja/RetirementHome/src/retirementhome/database/Boarder.java</file>
+            <file>file:/C:/Users/marys/studia/semestr7/WBD/apka-poAli/WBD_aplikacja/RetirementHome/src/retirementhome/database/Stay.java</file>
+            <file>file:/C:/Users/marys/studia/semestr7/WBD/apka-poAli/WBD_aplikacja/RetirementHome/src/retirementhome/screen/FXMLWorkerDataScreenController.java</file>
+            <file>file:/C:/Users/marys/studia/semestr7/WBD/apka-poAli/WBD_aplikacja/RetirementHome/src/retirementhome/screen/FXMLBoarderStayScreenController.java</file>
+            <file>file:/C:/Users/marys/studia/semestr7/WBD/apka-poAli/WBD_aplikacja/RetirementHome/src/retirementhome/database/Room.java</file>
+        </group>
     </open-files>
 </project-private>

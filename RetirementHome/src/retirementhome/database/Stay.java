@@ -130,5 +130,27 @@ public class Stay {
             
         
     }
+    public int changeStay(Connection conn, int nr){
+        String sql = "update Pobyty set data_wypisu = ? where nr_pobytu = ?";
+        Date date= new Date(Calendar.getInstance().getTime().getTime());
+        PreparedStatement stmt;
+        Integer res = 0;
+        try{
+            stmt = conn.prepareStatement(sql);
+            stmt.setDate(1, date);
+            stmt.setInt(2, nr);
+            
+            res = stmt.executeUpdate();
+        }catch(SQLException exc){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error with updating data");
+            alert.setContentText("Details: "+exc.getMessage());
+            alert.showAndWait();            
+        }
+        return res;
+            
+        
+    }    
+    
     
 }

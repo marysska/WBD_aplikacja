@@ -1,10 +1,137 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" maxHeight="600.0" maxWidth="1200.0" minHeight="600.0" minWidth="1200.0" prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="retirementhome.screen.FXMLBoarderAccomodationScreenController">
+<AnchorPane id="AnchorPane" maxHeight="600.0" maxWidth="1200.0" minHeight="600.0" minWidth="1200.0" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: #326647;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="retirementhome.screen.FXMLBoarderAccomodationScreenController">
    <children>
-      <Text layoutX="169.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BOARDER ACCOMODATION" />
+      <AnchorPane layoutX="20.0" layoutY="25.0" prefHeight="200.0" prefWidth="350.0" style="-fx-background-color: ivory;">
+         <children>
+            <Text fx:id="textStep1" fill="#326647" layoutX="10.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Krok 1 - Wybierz co chcesz zrobić">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <Button fx:id="dalej1" layoutX="270.0" layoutY="160.0" mnemonicParsing="false" onAction="#onDalej1" prefHeight="30.0" prefWidth="70.0" text="Dalej" textFill="#326647">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <CheckBox fx:id="checkZakwateruj" layoutX="70.0" layoutY="70.0" mnemonicParsing="false" onAction="#onZakwateruj" prefHeight="30.0" prefWidth="120.0" text="Zakwateruj" textFill="#326647">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </CheckBox>
+            <CheckBox fx:id="checkWykwateruj" layoutX="70.0" layoutY="110.0" mnemonicParsing="false" onAction="#onWykwateruj" prefHeight="30.0" prefWidth="120.0" text="Wykwateruj" textFill="#326647">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </CheckBox>
+         </children></AnchorPane>
+      <AnchorPane layoutX="20.0" layoutY="240.0" prefHeight="310.0" prefWidth="715.0" style="-fx-background-color: ivory;">
+         <children>
+            <Text fx:id="textStep2" fill="#326647" layoutX="10.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Krok 2 - Wybierz Penjonariusza">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <Button fx:id="dalej2" layoutX="635.0" layoutY="10.0" mnemonicParsing="false" onAction="#onDalej2" prefHeight="30.0" prefWidth="70.0" text="Dalej" textFill="#326647">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="cofnij2" layoutX="555.0" layoutY="10.0" mnemonicParsing="false" onAction="#onCofnij2" prefHeight="30.0" prefWidth="70.0" text="Cofnij" textFill="#326647">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <TableView fx:id="tabelPensjonariusz" layoutX="55.0" layoutY="75.0" prefHeight="200.0" prefWidth="597.0">
+              <columns>
+                <TableColumn fx:id="colPenNr" prefWidth="48.79998779296875" text="Nr" />
+                <TableColumn fx:id="colPenNam" prefWidth="95.99996948242188" text="Imię" />
+                  <TableColumn fx:id="colPenSur" prefWidth="124.00001525878906" text="Nazwisko" />
+                  <TableColumn fx:id="colPenDoc" minWidth="0.0" prefWidth="128.79998779296875" text="Nr dokumentu" />
+                  <TableColumn fx:id="colPenDate" prefWidth="100.800048828125" text="Data urdzenia" />
+                  <TableColumn fx:id="colPenPESEL" prefWidth="96.00006103515625" text="PESEL" />
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="760.0" layoutY="385.0" prefHeight="165.0" prefWidth="415.0" style="-fx-background-color: ivory;">
+         <children>
+            <Text fx:id="textStep5" fill="#326647" layoutX="10.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Krok 5 - Zatwierdź">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <Button fx:id="cofnij5" layoutX="335.0" layoutY="10.0" mnemonicParsing="false" onAction="#onCofnij5" prefHeight="30.0" prefWidth="70.0" text="Cofnij" textFill="#326647">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="save" layoutX="40.0" layoutY="80.0" mnemonicParsing="false" onAction="#onSave" prefHeight="30.0" prefWidth="100.0" text="Zatwierdz" textFill="#326647">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="rollback" layoutX="265.0" layoutY="80.0" mnemonicParsing="false" onAction="#onAnuluj" prefHeight="30.0" prefWidth="100.0" text="Anuluj" textFill="#326647">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="390.0" layoutY="25.0" prefHeight="200.0" prefWidth="350.0" style="-fx-background-color: ivory;">
+         <children>
+            <Text fx:id="textStep3" fill="#326647" layoutX="10.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Krok 3 - Wybierz ofertę">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <Button fx:id="dalej3" layoutX="270.0" layoutY="160.0" mnemonicParsing="false" onAction="#onDalej3" prefHeight="30.0" prefWidth="70.0" text="Dalej" textFill="#326647">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="cofnij3" layoutX="190.0" layoutY="160.0" mnemonicParsing="false" onAction="#onCofnij3" prefHeight="30.0" prefWidth="70.0" text="Cofnij" textFill="#326647">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <ChoiceBox fx:id="selectOferta" layoutX="48.0" layoutY="74.0" prefHeight="26.0" prefWidth="219.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="760.0" layoutY="25.0" prefHeight="345.0" prefWidth="415.0" style="-fx-background-color: ivory;">
+         <children>
+            <Text fx:id="textStep4" fill="#326647" layoutX="10.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Krok 4 - Wybierz pokój">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <Button fx:id="dalej4" layoutX="335.0" layoutY="305.0" mnemonicParsing="false" onAction="#onDalej4" prefHeight="30.0" prefWidth="70.0" text="Dalej" textFill="#326647">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="cofnij4" layoutX="255.0" layoutY="305.0" mnemonicParsing="false" onAction="#onCofnij4" prefHeight="30.0" prefWidth="70.0" text="Cofnij" textFill="#326647">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <TableView fx:id="tabelPokoj" layoutX="60.0" layoutY="53.0" prefHeight="240.0" prefWidth="290.0">
+              <columns>
+                <TableColumn fx:id="colPokojNr" prefWidth="56.0" text="Nr" />
+                <TableColumn fx:id="colPokojPomiesz" prefWidth="131.2000732421875" text="Nr pomieszczenia" />
+                  <TableColumn fx:id="colPokojPietro" prefWidth="95.20013427734375" text="Nr piętra" />
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
