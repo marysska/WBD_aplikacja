@@ -354,7 +354,7 @@ public class FXMLBoarderAccomodationScreenController implements Initializable {
         else{
             saveWykwateruj();
         }
-        set();
+        
     }
     
     private void saveZakwateruj(){
@@ -377,6 +377,7 @@ public class FXMLBoarderAccomodationScreenController implements Initializable {
                 alert1.setContentText("Zmienione zostało "+ Integer.toString(result) +" rekordów");
                 alert1.show();                 
             }
+            set();
         }
         else{
             return;
@@ -404,6 +405,7 @@ public class FXMLBoarderAccomodationScreenController implements Initializable {
                 alert1.setContentText("Zmienione zostało "+ Integer.toString(result) +" rekordów");
                 alert1.show();                 
             }
+            set();
         }
         else{
             return;
