@@ -39,57 +39,57 @@
       <Button fx:id="modifyButton" layoutX="358.0" layoutY="496.0" mnemonicParsing="false" onAction="#onModifyButtonClick" prefHeight="25.0" prefWidth="79.0" text="Modyfikuj" textFill="#326647" />
       <AnchorPane layoutX="874.0" layoutY="47.0" prefHeight="506.0" prefWidth="306.0" style="-fx-background-color: ivory;">
          <children>
-            <Text fill="#326647" layoutX="20.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Imię:" wrappingWidth="38.9366455078125">
+            <Text fill="#326647" layoutX="24.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Imię (*)" wrappingWidth="51.73663330078125">
                <font>
                   <Font size="14.0" />
                </font>
             </Text>
-            <Text fx:id="textFX1" fill="#326647" layoutX="20.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nazwisko:" wrappingWidth="68.00000000000011">
+            <Text fx:id="textFX1" fill="#326647" layoutX="19.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nazwisko (*)" wrappingWidth="79.0">
                <font>
                   <Font size="14.0" />
                </font>
             </Text>
-            <Text fx:id="textFX2" fill="#326647" layoutX="20.0" layoutY="315.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Miasto:" wrappingWidth="68.0">
+            <Text fx:id="textFX2" fill="#326647" layoutX="20.0" layoutY="315.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Miasto (*)" wrappingWidth="68.0">
                <font>
                   <Font size="14.0" />
                </font>
             </Text>
-            <Text fx:id="textFX3" fill="#326647" layoutX="20.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kod pocztowy:" wrappingWidth="97.3365478515625">
+            <Text fx:id="textFX3" fill="#326647" layoutX="20.0" layoutY="283.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kod pocztowy (*)" wrappingWidth="106.1365966796875">
                <font>
                   <Font size="14.0" />
                </font>
             </Text>
-            <Text fx:id="textFX4" fill="#326647" layoutX="20.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nr mieszkania: " wrappingWidth="97.3365478515625">
+            <Text fx:id="textFX4" fill="#326647" layoutX="20.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nr mieszkania" wrappingWidth="97.3365478515625">
                <font>
                   <Font size="14.0" />
                </font>
             </Text>
-            <Text fx:id="textFX5" fill="#326647" layoutX="20.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nr domu:" wrappingWidth="68.00000000000006">
+            <Text fx:id="textFX5" fill="#326647" layoutX="19.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nr domu (*)" wrappingWidth="79.0">
                <font>
                   <Font size="14.0" />
                </font>
             </Text>
-            <Text fx:id="textFX6" fill="#326647" layoutX="20.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ulica:" wrappingWidth="38.9366455078125">
+            <Text fx:id="textFX6" fill="#326647" layoutX="20.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ulica (*)" wrappingWidth="51.73663330078125">
                <font>
                   <Font size="14.0" />
                </font>
             </Text>
-            <Text fx:id="textFX7" fill="#326647" layoutX="20.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nr dokumentu:" wrappingWidth="106.1365966796875">
+            <Text fx:id="textFX7" fill="#326647" layoutX="18.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nr dokumentu (*)" wrappingWidth="114.9366455078125">
                <font>
                   <Font size="14.0" />
                </font>
             </Text>
-            <Text fx:id="textFX8" fill="#326647" layoutX="20.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Płeć:" wrappingWidth="59.73663330078125">
+            <Text fx:id="textFX8" fill="#326647" layoutX="20.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Płeć (*)" wrappingWidth="59.73663330078125">
                <font>
                   <Font size="14.0" />
                </font>
             </Text>
-            <Text fx:id="textFX9" fill="#326647" layoutX="20.0" layoutY="350.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data urodzenia:" wrappingWidth="106.1365966796875">
+            <Text fx:id="textFX9" fill="#326647" layoutX="18.0" layoutY="353.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data urodzenia (*)" wrappingWidth="114.9366455078125">
                <font>
                   <Font size="14.0" />
                </font>
             </Text>
-            <Text fx:id="textFX10" fill="#326647" layoutX="20.0" layoutY="385.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PESEL:" wrappingWidth="51.73663330078125">
+            <Text fx:id="textFX10" fill="#326647" layoutX="20.0" layoutY="388.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PESEL" wrappingWidth="51.73663330078125">
                <font>
                   <Font size="14.0" />
                </font>
