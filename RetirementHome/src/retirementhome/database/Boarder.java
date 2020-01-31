@@ -226,7 +226,30 @@ public class Boarder {
         return listBoarder;
     }
     
-    
+    public int getStayNr(Connection conn, int id){
+        Date date= new Date(Calendar.getInstance().getTime().getTime());
+        String sql = "SELECT nr_pobytu from pobyty where nr_pensjonariusza = ? and"
+                + "(data_wypisu is null or data_wypisu > ? )";
+        PreparedStatement stmt;
+        int res = 0;
+        ResultSet rs;
+        try{
+            stmt = conn.prepareStatement(sql);
+            stmt.setInt(1,id);
+            stmt.setDate(2, date) ;
+            rs =stmt.executeQuery();
+            while(rs.next()){
+                res = rs.getInt(1);
+            }
+            
+        }catch (SQLException exc){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error with data access ");
+            alert.setContentText("Details: "+exc.getMessage());
+            alert.showAndWait();
+        }
+        return res;      
+    }
     
     public ObservableList<Boarder> getByNameFree(Connection conn, String name, String lastName){
         ObservableList<Boarder> listBoarder = FXCollections.observableArrayList();

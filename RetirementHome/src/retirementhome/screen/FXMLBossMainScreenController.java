@@ -37,7 +37,18 @@ public class FXMLBossMainScreenController implements Initializable {
     @FXML
     private FXMLWorkerDataScreenController FXMLWorkerDataScreenController;
     
-    
+    @FXML
+    void functionTabPensjonariusze() {
+        try{
+        FXMLBoarderAccomodationScreenController.set();
+        FXMLWorkerDataScreenController.set();
+        FXMLBoarderListScreenController.set();
+        FXMLWorkerListScreenController.set();            
+        }catch(Exception exp){
+            
+        }
+
+    }    
     
     @FXML void buttonWylogujSieSetOnAction(ActionEvent event) throws IOException{
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/retirementhome/FXMLRetirementHome.fxml"));     

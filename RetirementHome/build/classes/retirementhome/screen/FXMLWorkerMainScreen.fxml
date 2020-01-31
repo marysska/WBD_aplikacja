@@ -14,12 +14,12 @@
                <content>
                   <fx:include fx:id="FXMLBoarderListScreen" source="FXMLBoarderListScreen.fxml" />
                </content></Tab>
-            <Tab text="Zakwaterowanie">
+            <Tab onSelectionChanged="#functionTabPensjonariusze" text="Zakwaterowanie">
                <content>
                   <fx:include fx:id="FXMLBoarderAccomodationScreen" source="FXMLBoarderAccomodationScreen.fxml" />
                </content>
             </Tab>
-            <Tab text="Dane osobowe">
+            <Tab onSelectionChanged="#functionTabPensjonariusze" text="Dane osobowe">
                <content>
                   <fx:include fx:id="FXMLWorkerDataScreen" source="FXMLWorkerDataScreen.fxml" />
                </content>

@@ -17,6 +17,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
 import retirementhome.DBConnection;
 import retirementhome.database.Bill;
+import retirementhome.database.Boarder;
 
 /**
  * FXML Controller class
@@ -58,7 +59,9 @@ public class FXMLBoarderPaymentScreenController implements Initializable {
     
     public void set(){
         Bill bill = new Bill();
-        listBills = bill.getBoardersBill(conn, boarderId);
+        Boarder boarder = new Boarder();
+        int idStay = boarder.getStayNr(conn, boarderId);
+        listBills = bill.getBoardersBill(conn, idStay);
         float billSum = 0;
         billSum = listBills.stream().map((b) -> b.getPrice()).reduce(billSum, (accumulator, _item) -> accumulator + _item);
         String month = bill.getActualMonth(conn);

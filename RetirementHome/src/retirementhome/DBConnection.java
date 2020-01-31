@@ -19,8 +19,8 @@ public class DBConnection{
     
     public static Connection getConnection() {
         String DB_URL = "jdbc:oracle:thin:@ora3.elka.pw.edu.pl:1521:ora3inf";
-        String DB_USER = "apotural";
-        String DB_PASS = "apotural";
+        String DB_USER = "mkoniecz";
+        String DB_PASS = "mkoniecz";
 
         try{
             conn= DriverManager.getConnection(DB_URL, DB_USER, DB_PASS); 

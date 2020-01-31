@@ -45,10 +45,16 @@ public class FXMLWorkerMainScreenController implements Initializable {
 
     @FXML
     void functionTabPensjonariusze() {
-        System.out.println("new change");
+        try{
+        FXMLBoarderAccomodationScreenController.set();
+        FXMLWorkerDataScreenController.set();
+        FXMLBoarderListScreenController.set();           
+        }catch(Exception exp){
+            
+        }
     }
-    
-    @FXML void buttonWylogujSieSetOnAction(ActionEvent event) throws IOException{
+    @FXML 
+        void buttonWylogujSieSetOnAction(ActionEvent event) throws IOException{
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/retirementhome/FXMLRetirementHome.fxml"));     
             Parent root = (Parent)fxmlLoader.load();          
             Scene scene = new Scene(root);      

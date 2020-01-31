@@ -40,6 +40,17 @@ public class FXMLBoarderMainScreenController implements Initializable {
     @FXML
     private Tab tabPayment;
     
+    @FXML
+    void functionTabPensjonariusze() {
+        try{
+        FXMLBoarderDataScreenController.set();
+        FXMLBoarderStayScreenController.set();
+        FXMLBoarderPaymentScreenController.set();
+        }catch(Exception e){
+            
+        }
+    }
+    
     @FXML void buttonWylogujSieSetOnAction(ActionEvent event) throws IOException{
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/retirementhome/FXMLRetirementHome.fxml"));     
             Parent root = (Parent)fxmlLoader.load();          

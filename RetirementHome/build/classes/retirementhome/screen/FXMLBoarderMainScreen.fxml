@@ -9,16 +9,16 @@
    <children>
       <TabPane prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <tabs>
-          <Tab text="Dane osobowe">
+          <Tab onSelectionChanged="#functionTabPensjonariusze" text="Dane osobowe">
                <content>
                   <fx:include fx:id="FXMLBoarderDataScreen" source="FXMLBoarderDataScreen.fxml" />                  
                </content></Tab>
-            <Tab text="Pobyt">
+            <Tab onSelectionChanged="#functionTabPensjonariusze" text="Pobyt">
                <content>
                   <fx:include fx:id="FXMLBoarderStayScreen" source="FXMLBoarderStayScreen.fxml" />
                </content>
             </Tab>
-            <Tab fx:id="tabPayment" text="Opłaty">
+            <Tab fx:id="tabPayment" onSelectionChanged="#functionTabPensjonariusze" text="Opłaty">
                <content>
                   <fx:include fx:id="FXMLBoarderPaymentScreen" source="FXMLBoarderPaymentScreen.fxml" />
                </content>

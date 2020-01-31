@@ -287,7 +287,7 @@ public class FXMLWorkerListScreenController implements Initializable {
         listNamePositions = position.getNamePositionsList(conn);
     }
     
-    private void set(){
+    public void set(){
         getWorkersTable();
         setWorkersTable(); 
         getNamePositions();
