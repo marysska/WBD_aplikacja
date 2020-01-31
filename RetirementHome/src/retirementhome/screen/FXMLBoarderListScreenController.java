@@ -276,6 +276,10 @@ public class FXMLBoarderListScreenController implements Initializable {
         //Funkcja wolana na poczatku zeby wpisac dane wszystkich userow
         deactivatePanel(true);
         isModified = false;
+                addButton.setDisable(false);
+        modifyButton.setDisable(false);
+        deleteButton.setDisable(false);
+        clearPanelClean();
         setTable();
     }
     
