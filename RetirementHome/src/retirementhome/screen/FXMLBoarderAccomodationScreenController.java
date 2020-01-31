@@ -368,7 +368,7 @@ public class FXMLBoarderAccomodationScreenController implements Initializable {
             if(result == 1){
                 Alert alert1= new Alert(Alert.AlertType.INFORMATION);
                 alert1.setTitle("Sukces");
-                alert.setContentText("Zakwaterowano  pensjonariusza!");
+                alert1.setContentText("Zakwaterowano " +tabelPensjonariusz.getSelectionModel().getSelectedItem().getName()+" "+tabelPensjonariusz.getSelectionModel().getSelectedItem().getLastName() +"!");
                 alert1.show(); 
             }
             else{
