@@ -1,8 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane id="AnchorPane" maxHeight="600.0" maxWidth="1200.0" minHeight="600.0" minWidth="1200.0" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: #326647;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="retirementhome.screen.FXMLWorkerListScreenController">
-    
+   <children>
+      <TextField fx:id="nameFilterPole" layoutX="24.0" layoutY="18.0" promptText="Imię" />
+      <TextField fx:id="surnameFilterPole" layoutX="191.0" layoutY="18.0" promptText="Nazwisko" />
+      <Button fx:id="filterButton" layoutX="521.0" layoutY="18.0" mnemonicParsing="false" onAction="#filterButtonOnAction" prefHeight="25.0" prefWidth="68.0" text="Filtruj" textFill="#326647" />
+      <TextField fx:id="positionFilterPole" layoutX="355.0" layoutY="18.0" promptText="Stanowisko" />
+      <TableView fx:id="tableWorker" layoutX="24.0" layoutY="59.0" prefHeight="367.0" prefWidth="1151.0">
+        <columns>
+            <TableColumn fx:id="tableWorkerNr" prefWidth="52.66668510437012" text="Nr" />
+            <TableColumn fx:id="tableWorkerImie" prefWidth="99.33332061767578" text="Imię" />
+            <TableColumn fx:id="tableWorkerNazwisko" prefWidth="99.33335876464844" text="Nazwisko" />
+            <TableColumn fx:id="tableWorkerStanowisko" prefWidth="110.66668701171875" text="Stanowisko" />
+            <TableColumn fx:id="tableWorkerNrDokumentu" prefWidth="116.666748046875" text="Nr dokumentu" />
+            <TableColumn fx:id="tableWorkerNrTelefonu" prefWidth="111.33328247070312" text="Nr telefonu" />
+            <TableColumn fx:id="tableWorkerDataZatrudnienia" prefWidth="121.9998779296875" text="Data zatrudnienia" />
+            <TableColumn fx:id="tableWorkerPensjaPodstawowa" prefWidth="143.3333740234375" text="Pensja podstawowa" />
+            <TableColumn fx:id="tableWorkerPensjaDodatkowa" prefWidth="131.3333740234375" text="Pensja dodatkowa" />
+            <TableColumn fx:id="tablaWorkerDataBadan" prefWidth="158.6666259765625" text="Data ważności badań" />
+        </columns>
+      </TableView>
+      <AnchorPane layoutX="27.0" layoutY="450.0" prefHeight="95.0" prefWidth="1148.0" style="-fx-background-color: ivory;">
+         <children>
+            <Text fx:id="textFX2" fill="#326647" layoutX="14.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stanowisko:" wrappingWidth="93.3333740234375">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text fx:id="textFX3" fill="#326647" layoutX="321.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pensja dodatkowa:" wrappingWidth="92.00323486328125">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text fx:id="textFX9" fill="#326647" layoutX="648.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data ważności badań:" wrappingWidth="97.247802734375">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Button fx:id="zatwierdzButton" layoutX="1059.0" layoutY="55.0" mnemonicParsing="false" onAction="#zatwierdzButtonOnAction" text="Zatwierdź" textFill="#326647" />
+            <Button fx:id="anulujButton" layoutX="976.0" layoutY="54.0" mnemonicParsing="false" onAction="#anulujButtonOnAction" prefHeight="26.0" prefWidth="68.0" text="Anuluj" textFill="#326647" />
+            <TextField fx:id="paymentPole" layoutX="418.0" layoutY="51.0" prefHeight="20.0" prefWidth="150.0" promptText="Pensja dodatkowa" />
+            <DatePicker fx:id="datePole" layoutX="747.0" layoutY="49.0" prefHeight="20.0" prefWidth="150.0" />
+            <Button fx:id="modifyButton" layoutX="976.0" layoutY="14.0" mnemonicParsing="false" onAction="#modifyButtonOnAction" prefHeight="30.0" prefWidth="150.0" text="Modyfikuj" textFill="#326647">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <ComboBox fx:id="positionPole" layoutX="95.0" layoutY="51.0" prefWidth="150.0" />
+            <Text fx:id="textFX21" fill="#326647" layoutX="14.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Imię:" wrappingWidth="93.3333740234375">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text fx:id="textFX211" fill="#326647" layoutX="243.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nazwisko:" wrappingWidth="93.3333740234375">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text fx:id="textImieWorker" fill="#326647" layoutX="60.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Imię:" wrappingWidth="148.6666717529298">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Text>
+            <Text fx:id="textNazwiskoWorker" fill="#326647" layoutX="322.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nazwisko:" wrappingWidth="198.22222900390625">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+   </children>
 </AnchorPane>

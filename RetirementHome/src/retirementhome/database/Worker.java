@@ -38,8 +38,24 @@ public class Worker {
     private String phoneNumber;
     private Integer nrRetirementHome;
     private Integer nrPosition;
+    private String positionName;
+    private Float basicSalary;
+    
 
-
+    public String getPositionName(){
+        return this.positionName;
+    }
+    public void setPositionName(String position){
+        this.positionName = position;
+    }
+    
+    public Float getBasicSalary(){
+        return this.basicSalary;
+    }
+    public void setBasicSalary(Float salary){
+        this.basicSalary = salary;
+    }
+    
     public Integer getNrWorker() {
         return nrWorker;
     }
@@ -227,7 +243,7 @@ public class Worker {
     }    
     
     public void setWorkersValues(Connection conn, int id ){
-        String sql = "SELECT * from pracownicy where nr_pracownika = ?";
+        String sql = "select p.*, s.nazwa_stanowiska, s.pensja_podstawowa from stanowiska s, pracownicy  p where p.nr_stanowiska = s.nr_stanowiska and p.nr_pracownika = ?";
         PreparedStatement stmt;
         ResultSet rs;
         this.nrWorker = id;
@@ -237,6 +253,7 @@ public class Worker {
             rs =stmt.executeQuery();
             while(rs.next()){
                 
+                this.nrWorker = rs.getInt(1);
                 this.name = rs.getString(2);
                 this.lastName = rs.getString(3);                
                 this.nrDocument = rs.getString(4); 
@@ -254,7 +271,8 @@ public class Worker {
                 this.phoneNumber = rs.getString(16);
                 this.nrRetirementHome = rs.getInt(17);
                 this.nrPosition = rs.getInt(18);
-                System.out.println(this.nrAccount);
+                this.positionName = rs.getString(19);
+                this.basicSalary = rs.getFloat(20);
             }
   
         }catch (SQLException exc){
@@ -265,6 +283,55 @@ public class Worker {
         }
         
     }
+  
+    public ObservableList<Worker> getWorkersList(Connection conn, String name, String surname, String position){
+        ObservableList<Worker> listWorker = FXCollections.observableArrayList();
+        String sql = "select p.*, s.nazwa_stanowiska, s.pensja_podstawowa from stanowiska s, pracownicy  p where p.nr_stanowiska = s.nr_stanowiska and p.imie like ? and p.nazwisko like ? and s.nazwa_stanowiska like ? order by p.nr_pracownika";
+       
+        PreparedStatement stmt;
+        ResultSet rs;
+        try{
+            stmt = conn.prepareStatement(sql);
+            stmt.setString(1, name+"%") ;
+            stmt.setString(2, surname+"%");
+            stmt.setString(3, position+"%");
+            rs =stmt.executeQuery();
+            while(rs.next()){
+                Worker worker = new Worker();
+                worker.nrWorker = rs.getInt(1);
+                worker.name = rs.getString(2);
+                worker.lastName = rs.getString(3);                
+                worker.nrDocument = rs.getString(4); 
+                worker.city = rs.getString(5);
+                worker.street = rs.getString(6);
+                worker.nrHouse = rs.getString(7);
+                worker.nrFlat = rs.getString(8);
+                worker.nrAccount = rs.getString(9);
+                worker.postCode = rs.getString(10);
+                worker.additionalSalary = rs.getFloat(11);
+                worker.birthDate = rs.getDate(12);
+                worker.hireDate = rs.getDate(13);
+                worker.pesel = rs.getString(14);
+                worker.testExpirationDate = rs.getDate(15);
+                worker.phoneNumber = rs.getString(16);
+                worker.nrRetirementHome = rs.getInt(17);
+                worker.nrPosition = rs.getInt(18);
+                worker.positionName = rs.getString(19);
+                worker.basicSalary = rs.getFloat(20);
+                listWorker.add(worker);
+
+            }
+  
+        }catch (SQLException exc){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Błąd przy dostępie do bazy danych");
+            alert.setContentText("Szczegoły: "+exc.getMessage());
+            alert.showAndWait();
+        }
+        return listWorker;
+    }    
+    
+    
     
     public ObservableList<Worker> getAll(Connection conn){
         ObservableList<Worker> listWorker = FXCollections.observableArrayList();
@@ -456,10 +523,34 @@ public class Worker {
         }
         return res;     
     }
+    
+    public int updateWorkerByBoss(Connection conn, Float newSalary, String position, Date date ){
+        String sql = "update pracownicy p set p.pensja_dodatkowa = ? , p.data_waznosci_badan = ? , p.nr_stanowiska = (select s.nr_stanowiska from stanowiska s where s.nazwa_stanowiska = ?) where nr_pracownika = ? ";
+        PreparedStatement stmt;
+        Integer res = 0;
+        try{
+            stmt = conn.prepareStatement(sql);
+            stmt.setFloat(1, newSalary);
+            stmt.setDate(2, date);
+            stmt.setString(3, position);
+            stmt.setInt(4, this.nrWorker);
+            res = stmt.executeUpdate();
+            
+        }catch(SQLException exc){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Błąd przy dostępie do bazy danych");
+            alert.setContentText("Szczegoły: "+exc.getMessage());
+            alert.showAndWait();  
+            res = -1;
+        }
+        return res;
+    }
+    
     public int updateWorker(Connection conn, int id,String doc,  String city, String street, String nrLoc, String nrFlat, String postCode , String acc, String nrTel){
         if (postCode.charAt(2) != '-'){
             return -1;
         }
+        
         String sql = "update pracownicy set nr_dokumentu_pracownika = ? , miasto = ? , ulica= ? , nr_posesji = ? , nr_lokalu = ? , kod_pocztowy = ?, nr_konta = ?, nr_telefonu = ? where nr_pracownika = ? ";
         PreparedStatement stmt;
         Integer res = 0;
